@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FrameworkLib\FrameworkLib.csproj" />
+    <ProjectReference Include="..\System.Security.Bonus\System.Security.Bonus.csproj" />
+  </ItemGroup>
+
+   <ItemGroup>
+      <Reference Include="$(ProjectDir)..\System.Security.dll">
+         <SpecificVersion>True</SpecificVersion>
+      </Reference>
+   </ItemGroup>
+   
+   <!--
+   <Target Name="RemoveSystemSecurity" AfterTargets="ResolveTargetingPackAssets" BeforeTargets="ResolvePackageFileConflicts">
+      <ItemGroup>
+         <ReferencesToExclude Include="@(Reference)" Condition="'%(FileName)' == 'System.Security'" />
+         <Reference Remove="@(ReferencesToExclude)" />
+      </ItemGroup>
+   </Target>
+   -->
+
+</Project>
